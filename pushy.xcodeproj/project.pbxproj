@@ -13,6 +13,8 @@
 		535811901A1D04A000ECE228 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5358118F1A1D04A000ECE228 /* Images.xcassets */; };
 		535811931A1D04A000ECE228 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 535811911A1D04A000ECE228 /* LaunchScreen.xib */; };
 		5358119F1A1D04A000ECE228 /* pushyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358119E1A1D04A000ECE228 /* pushyTests.swift */; };
+		535811A91A1D04E700ECE228 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535811A81A1D04E700ECE228 /* Agent.swift */; };
+		535811AA1A1D04E700ECE228 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535811A81A1D04E700ECE228 /* Agent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		535811981A1D04A000ECE228 /* pushyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pushyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5358119D1A1D04A000ECE228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5358119E1A1D04A000ECE228 /* pushyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pushyTests.swift; sourceTree = "<group>"; };
+		535811A81A1D04E700ECE228 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 				5358118F1A1D04A000ECE228 /* Images.xcassets */,
 				535811911A1D04A000ECE228 /* LaunchScreen.xib */,
 				535811861A1D04A000ECE228 /* Supporting Files */,
+				535811A81A1D04E700ECE228 /* Agent.swift */,
 			);
 			path = pushy;
 			sourceTree = "<group>";
@@ -212,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535811A91A1D04E700ECE228 /* Agent.swift in Sources */,
 				5358118B1A1D04A000ECE228 /* ViewController.swift in Sources */,
 				535811891A1D04A000ECE228 /* AppDelegate.swift in Sources */,
 			);
@@ -222,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5358119F1A1D04A000ECE228 /* pushyTests.swift in Sources */,
+				535811AA1A1D04E700ECE228 /* Agent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
