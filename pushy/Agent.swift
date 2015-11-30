@@ -142,8 +142,12 @@ class Agent {
     */
     
     func send(data: Data) -> Agent {
-        var error: NSError?
-        let json = NSJSONSerialization.dataWithJSONObject(data, options: nil, error: &error)
+        let json: NSData?
+        do {
+            json = try NSJSONSerialization.dataWithJSONObject(data, options: [])
+        } catch let error as NSError {
+            json = nil
+        }
         self.set("Content-Type", value: "application/json")
         self.request.HTTPBody = json
         return self
@@ -155,8 +159,8 @@ class Agent {
     }
     
     func end(done: Response) -> Agent {
-        let completion = { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            let res = response as NSHTTPURLResponse!
+        let _completion = { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            let res = response as! NSHTTPURLResponse!
             if ((error) != nil) {
                 done(res, data, error)
                 return
@@ -164,11 +168,22 @@ class Agent {
             var error: NSError?
             var json: AnyObject!
             if ((data) != nil) {
-                json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error)
+                do {
+                    json = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                } catch var error as NSError {
+                    json = nil
+                } catch {
+                    fatalError()
+                }
             }
             done(res, json, error)
         }
-        NSURLConnection.sendAsynchronousRequest(self.request, queue: self.queue, completionHandler: completion)
+        
+        let session = NSURLSession.sharedSession()
+        session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            
+        }
+        
         return self
     }
     

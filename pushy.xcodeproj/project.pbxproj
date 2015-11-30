@@ -15,6 +15,8 @@
 		5358119F1A1D04A000ECE228 /* pushyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358119E1A1D04A000ECE228 /* pushyTests.swift */; };
 		535811A91A1D04E700ECE228 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535811A81A1D04E700ECE228 /* Agent.swift */; };
 		535811AA1A1D04E700ECE228 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535811A81A1D04E700ECE228 /* Agent.swift */; };
+		53B8A6861A38F1ED00009951 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 53B8A6851A38F1ED00009951 /* Default.png */; };
+		53B8A6871A38F1ED00009951 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 53B8A6851A38F1ED00009951 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 		5358119D1A1D04A000ECE228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5358119E1A1D04A000ECE228 /* pushyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pushyTests.swift; sourceTree = "<group>"; };
 		535811A81A1D04E700ECE228 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		53B8A6851A38F1ED00009951 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 		535811861A1D04A000ECE228 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				53B8A6851A38F1ED00009951 /* Default.png */,
 				535811871A1D04A000ECE228 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -160,11 +164,14 @@
 		5358117B1A1D04A000ECE228 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Mark Madsen";
 				TargetAttributes = {
 					535811821A1D04A000ECE228 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = GBCRLW29UQ;
 					};
 					535811971A1D04A000ECE228 = {
 						CreatedOnToolsVersion = 6.1;
@@ -199,6 +206,7 @@
 				5358118E1A1D04A000ECE228 /* Main.storyboard in Resources */,
 				535811931A1D04A000ECE228 /* LaunchScreen.xib in Resources */,
 				535811901A1D04A000ECE228 /* Images.xcassets in Resources */,
+				53B8A6861A38F1ED00009951 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B8A6871A38F1ED00009951 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +422,7 @@
 				535811A41A1D04A000ECE228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		535811A51A1D04A000ECE228 /* Build configuration list for PBXNativeTarget "pushyTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +431,7 @@
 				535811A71A1D04A000ECE228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

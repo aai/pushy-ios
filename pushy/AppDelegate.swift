@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let types: UIUserNotificationType = [UIUserNotificationType.Badge, UIUserNotificationType.Alert, UIUserNotificationType.Sound]
+        
         // Override point for customization after application launch.
-        let settings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
+        let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         
         UIApplication.sharedApplication().registerForRemoteNotifications()
@@ -40,25 +42,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
     }
     
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func setViewController(controller: ViewController) {
-        viewController = controller
-    }
     
     // implemented in your application delegate
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
-        println("Got token data! \(deviceToken)")
-        viewController?.udpateTextField("\(deviceToken)")
+        let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        
+        let deviceTokenString: String = ( deviceToken.description as NSString )
+            .stringByTrimmingCharactersInSet( characterSet )
+            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        
+        viewController?.udpateTextField("\(deviceTokenString)")
         
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
-        println("Couldn't register: \(error)")
+        print("Couldn't register: \(error)")
         viewController?.udpateTextField("Error, could not register.")
     }
     func application(application: UIApplication!, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings!) {
